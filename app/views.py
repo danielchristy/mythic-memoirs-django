@@ -1,16 +1,32 @@
 from django.shortcuts import render
-from .models import Session
+from .models import Session, Character, Location
 from rest_framework import generics
-from .serializers import SessionSerializer
+from .serializers import *
 
-# Create your views here.
-
-#list of all sessions
+#Session return all & return specific
 class SessionList(generics.ListCreateAPIView):
     queryset = Session.objects.all()
     serializer_class = SessionSerializer
 
-#individual session data
+
 class SessionDetail(generics.RetrieveUpdateAPIView):
     queryset = Session.objects.all()
     serializer_class = SessionSerializer
+
+#Character return all & return specific
+class CharacterList(generics.ListCreateAPIView):
+    queryset = Character.objects.all()
+    serializer_class = CharactersSerializer
+
+class CharacterDetail(generics.RetrieveUpdateAPIView):
+    queryset = Character.objects.all()
+    serializer_class = CharactersSerializer
+
+#Location return all & return specific
+class LocationList(generics.ListCreateAPIView):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
+
+class LocationDetail(generics.RetrieveUpdateAPIView):
+    queryset = Location.objects.all()
+    serializer_class = LocationSerializer
