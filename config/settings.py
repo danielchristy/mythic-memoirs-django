@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'corsheaders',
     'app',
 ]
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR, 'urls'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,10 +121,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # WHITELISTING FOR REACT
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000/',
-)
-
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost',
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
