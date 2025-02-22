@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-h-*1gf3pz0f@9ju7$b2eqf&vh-_9g081(x^a_&1ct3ss)x9a&b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -122,10 +122,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # WHITELISTING FOR REACT
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost',
-]
+CORS_ALLOW_ALL_ORIGINS = True
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
